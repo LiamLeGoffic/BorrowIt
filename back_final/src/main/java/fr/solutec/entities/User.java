@@ -2,7 +2,7 @@ package fr.solutec.entities;
 
 import lombok.Data;
 
-@Data
+@Data 
 public class User {
 
 }
