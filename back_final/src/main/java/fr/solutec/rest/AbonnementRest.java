@@ -1,6 +1,5 @@
 package fr.solutec.rest;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,15 +20,9 @@ public class AbonnementRest {
 	public Iterable<Abonnement> getAllAbonnement(){
 		return abonnementRepos.findAll();
 	}
-	/*
-	@GetMapping("abonnement/client/{idClient}")
-	public List<Abonnement> getAllAbonnementById(@PathVariable Long idClient){
-		return abonnementRepos.findAllByClient(idClient);
-	}*/
-	
 
 	@PostMapping("abonnement")
-	public Abonnement saveFriendship(@RequestBody Abonnement abo) {
+	public Abonnement saveAbonnement(@RequestBody Abonnement abo) {
 		return abonnementRepos.save(abo);
 	}
 

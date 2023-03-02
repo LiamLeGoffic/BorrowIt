@@ -1,6 +1,5 @@
 package fr.solutec.entities;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import jakarta.persistence.Entity;
@@ -14,7 +13,6 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Client extends Utilisateur{
 
-	private Long idClient;
 	//private Photo photo;
 	private int points;
 	private double note;
@@ -27,8 +25,8 @@ public class Client extends Utilisateur{
 	@OneToOne
 	private Messagerie messagerie;
 	
-	public Client(Object object, int i, int j, Object object2, ArrayList<Abonnement> arrayList, Object object3,
-			Utilisateur u) {
+	public Client(int points, double note, List<CarteBancaire> carteBancaire,
+			List<Abonnement> abonnements, Messagerie messagerie, Utilisateur u) {
 		this.setId(u.getId());
 		this.setPrenom(u.getPrenom());
 		this.setNom(u.getNom());
@@ -36,7 +34,6 @@ public class Client extends Utilisateur{
 		this.setMail(u.getMail());
 		this.setMotDePasse(u.getMotDePasse());
 		this.setDateCreation(u.getDateCreation());
-		this.idClient = idClient;
 		this.points = points;
 		this.note = note;
 		this.carteBancaire = carteBancaire;
