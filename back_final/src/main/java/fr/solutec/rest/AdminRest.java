@@ -18,7 +18,7 @@ public class AdminRest {
 	
 	@PostMapping("/admin")
 	public Optional<Administrateur> connexionAdmin(@RequestBody Administrateur admin){
-		return adminRepos.connexionAdmin(admin.getMail(), admin.getMotDePasse());
+		return adminRepos.connexionAdmin(admin.getMail(), admin.getMotDePasse()); //test
 	}
 	 
 }
