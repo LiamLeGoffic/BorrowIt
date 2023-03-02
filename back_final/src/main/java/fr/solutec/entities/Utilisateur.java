@@ -24,4 +24,6 @@ public class Utilisateur {
 	private String motDePasse;
 	@Temporal(TemporalType.DATE)
 	private Date dateCreation;
+	
+	
 }
