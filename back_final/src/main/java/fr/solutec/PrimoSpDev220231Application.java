@@ -1,5 +1,5 @@
 package fr.solutec;
-//test de commit
+//test de commit 2
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
