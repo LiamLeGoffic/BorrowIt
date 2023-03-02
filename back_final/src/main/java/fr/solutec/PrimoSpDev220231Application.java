@@ -1,13 +1,10 @@
 package fr.solutec;
 
-<<<<<<< HEAD
-=======
 import java.util.ArrayList;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
->>>>>>> branch 'master' of https://github.com/LiamLeGoffic/BorrowIt
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
