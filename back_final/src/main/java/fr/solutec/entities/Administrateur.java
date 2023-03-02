@@ -7,10 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@NoArgsConstructor @AllArgsConstructor @Data
+//@NoArgsConstructor @AllArgsConstructor 
+@Data
 @Entity
 public class Administrateur extends Utilisateur {
-	@Id @GeneratedValue
-	private Long idAdmin;
 	
 }
