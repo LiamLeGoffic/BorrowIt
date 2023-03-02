@@ -10,4 +10,5 @@ import lombok.NoArgsConstructor;
 public class Administrateur extends Utilisateur {
 
 	private Long idAdmin;
+	
 }
