@@ -10,5 +10,5 @@ import fr.solutec.repository.AdminRepository;
 public class AdminRest {
 	@Autowired
 	private AdminRepository adminRepos;
-	
+	 
 }
