@@ -9,6 +9,6 @@ import fr.solutec.repository.AdminRepository;
 @RestController @CrossOrigin("*")
 public class AdminRest {
 	@Autowired
-	private AdminRepository adminRepos ;
+	private AdminRepository adminRepos; //zs
 
 }
