@@ -2,11 +2,12 @@ package fr.solutec.entities;
 
 import java.util.Date;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -21,7 +22,10 @@ public class Objet {
 	//private Photo photo;
 	private double prixJour;
 	private double caution;
-	@Temporal(TemporalType.DATE)
+	@CreationTimestamp
 	private Date dateCreation;
+	
+	@OneToOne
+	private Client proprietaire;
 
 }
