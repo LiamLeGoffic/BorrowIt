@@ -16,5 +16,4 @@ public interface GroupeRepository extends CrudRepository<Groupe, Long>{
 
 	//public List<Groupe> RechercheAllGroupe(); 
 	
-	
 }
