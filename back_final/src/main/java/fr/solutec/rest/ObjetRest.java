@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,7 +30,7 @@ public class ObjetRest {
 	private ObjetRepository objetRepos;
 	
 	// Liste de tous les objets
-	@GetMapping()
+	@GetMapping
 	public Iterable<Objet> getAllObjets(){
 		return objetRepos.findAll();
 	}
@@ -38,6 +39,12 @@ public class ObjetRest {
 	@GetMapping("/{id}")
 	public Optional<Objet> getObjetById(@PathVariable Long id){
 		return objetRepos.findById(id);
+	}
+	
+	// Créer un nouvel objet
+	@PostMapping
+	public Objet saveObjet(@RequestBody Objet o) {
+		return objetRepos.save(o);
 	}
 	
 	// Supprimer un objet
@@ -58,14 +65,36 @@ public class ObjetRest {
 		return objetRepos.findClientByObjetId(id);
 	}
 	
-	// Modifier un objet
+	// Modifier un objet partiellement
+	public boolean partialUpdate(long id, String key, String value){
+		    Optional<Objet> optional = objetRepos.findById(id);
+		    if (optional.isPresent()) {
+		      Objet objet = optional.get();
+		      
+		      if (key.equalsIgnoreCase("nom")) {
+			    objet.setNom(value);
+			  }
+		      if (key.equalsIgnoreCase("prixJour")) {
+		        objet.setPrixJour(Double.parseDouble(value));
+		      }
+		      if (key.equalsIgnoreCase("caution")) {
+		        objet.setCaution(Double.parseDouble(value));
+		      }
+
+		      objetRepos.save(objet);
+		      return true;
+		    } else {
+		      return false;
+		    }
+		  }
+	
 	@PatchMapping("/{id}")
 	public ResponseEntity<Boolean> modifObjet(@PathVariable Long id, @RequestBody PatchDto dto){
 		if (dto.getOp().equalsIgnoreCase("update")) {
-			boolean result = service.partialUpdate(id, dto.getKey(), dto.getValue());
+			boolean result = partialUpdate(id, dto.getKey(), dto.getValue());
 			return new ResponseEntity<>(result, HttpStatus.ACCEPTED);
 		} else {
-			return false;
+			return null;
 		}
 		
 	}
