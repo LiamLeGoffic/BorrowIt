@@ -16,6 +16,7 @@ public class Client extends Utilisateur{
 	//private Photo photo;
 	private int points;
 	private double note;
+	
 
 	@OneToMany
 	private List<CarteBancaire> carteBancaire;
