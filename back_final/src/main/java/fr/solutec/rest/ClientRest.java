@@ -35,4 +35,5 @@ public class ClientRest {
 		return clientRepos.findAllAbonnementByClient(idClient);
 	}
 	
+	
 }

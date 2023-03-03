@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import fr.solutec.entities.Client;
 import fr.solutec.entities.Utilisateur;
 import fr.solutec.repository.UtilisateurRepository;
 

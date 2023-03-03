@@ -28,8 +28,6 @@ public class Location {
 	@OneToOne
 	private Objet objet;
 	@OneToOne
-	private Client locateur;
-	@OneToOne
-	private Client preteur;
+	private Client locataire;
 	
 }
