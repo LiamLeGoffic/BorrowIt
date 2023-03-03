@@ -1,6 +1,7 @@
 package fr.solutec.rest;
 
 import java.security.Provider.Service;
+import java.util.List;
 import java.util.Optional;
 
 import org.hibernate.cfg.NotYetImplementedException;
@@ -63,6 +64,12 @@ public class ObjetRest {
 	@GetMapping("/client/{id}")
 	public Optional<Objet> getClientbyObjetId(@PathVariable Long id){
 		return objetRepos.findClientByObjetId(id);
+	}
+	
+	// Voir la liste d'objets d'un client
+	@GetMapping("/listeObjetsClient/{id}")
+	public List<Objet> getObjetByProprietaire(@PathVariable Long id){
+		return objetRepos.findByProprietaireId(id);
 	}
 	
 	// Modifier un objet partiellement
