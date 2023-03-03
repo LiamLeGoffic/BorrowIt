@@ -34,4 +34,5 @@ public class ClientRest {
 	public List<Abonnement> getAllAbonnementById(@PathVariable Long idClient){
 		return clientRepos.findAllAbonnementByClient(idClient);
 	}
+	
 }
