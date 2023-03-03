@@ -45,22 +45,22 @@ public class MessageRest {
 	}
 	
 	@GetMapping("messagerie/messages/{idClient}")
-	public Optional<Message> getMessagesByIdClient(@PathVariable Long idClient){
+	public List<Message> getMessagesByIdClient(@PathVariable Long idClient){
 		return msgRepos.findMessagesByIdClient(idClient);
 	}
 
 	@GetMapping("messagerie/messages/{idEnvoyeur}")
-	public Optional<Message> getMessageByIdEnvoyeur(@PathVariable Long idEnvoyeur){
+	public List<Message> getMessageByIdEnvoyeur(@PathVariable Long idEnvoyeur){
 		return msgRepos.findMessagesByIdEnvoyeur(idEnvoyeur);
 	}
 	
 	@GetMapping("messagerie/messages/{idRecepteur}")
-	public Optional<Message> getMessageByIdDestinataire(@PathVariable Long idRecepteur){
+	public List<Message> getMessageByIdDestinataire(@PathVariable Long idRecepteur){
 		return msgRepos.findMessagesByIdDestinataire(idRecepteur);
 	}
 	
 	@GetMapping("messagerie/messages/{idEnvoyeur}/{idRecepteur}")
-	public Optional<Message> getMessageByIdEnvoyeurtIdDestinataire(@PathVariable Long idEnvoyeur, @PathVariable Long idRecepteur){
+	public List<Message> getMessageByIdEnvoyeurtIdDestinataire(@PathVariable Long idEnvoyeur, @PathVariable Long idRecepteur){
 		return msgRepos.findMessagesByIdEnvoyeurEtIdDestinataire(idEnvoyeur, idRecepteur);
 	}
 	
