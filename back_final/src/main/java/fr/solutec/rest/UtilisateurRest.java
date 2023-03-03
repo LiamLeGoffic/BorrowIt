@@ -1,5 +1,7 @@
 package fr.solutec.rest;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,5 +21,11 @@ public class UtilisateurRest {
 	@PostMapping("utilisateur")
 	public Utilisateur saveClient(@RequestBody Utilisateur u) {
 		return utilisateurRepos.save(u);
+	}
+	
+
+	@PostMapping("utilisateur/login")
+	public Optional<Utilisateur> getUtilisateurByLoginAndPassword(@RequestBody Utilisateur u){
+		return utilisateurRepos.findUtilisateurByMailPassword(u.getMail(), u.getMotDePasse());
 	}
 }
