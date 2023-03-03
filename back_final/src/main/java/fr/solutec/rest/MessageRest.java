@@ -1,6 +1,6 @@
 package fr.solutec.rest;
 
-import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,13 +21,13 @@ public class MessageRest {
 	private MessageRepository msgRepos;
 	
 	
-	@PostMapping("client/messagerie/messages")
+	@PostMapping("messagerie/messages")
 	public Message saveMessage(@RequestBody Message msg) {
 		return msgRepos.save(msg);
 	}
 	
 	
-	@DeleteMapping("client/messagerie/messages/{idMsg}")
+	@DeleteMapping("messagerie/messages/{idMsg}")
 	public boolean deleteMessage(@PathVariable Long idMsg) {
 		Optional<Message> msg = msgRepos.findById(idMsg);
 		if (msg.isPresent()) {
