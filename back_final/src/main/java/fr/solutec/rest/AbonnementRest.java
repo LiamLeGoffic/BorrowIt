@@ -22,11 +22,13 @@ public class AbonnementRest {
 	@Autowired
 	private AbonnementRepository abonnementRepos;
 	
+	// liste de tous les abonnements
 	@GetMapping("abonnement")
 	public Iterable<Abonnement> getAllAbonnement(){
 		return abonnementRepos.findAll();
 	}
 
+	// new abonnement (inutile de preciser id ni date d'achat ni date de début d'abonnement)
 	@PostMapping("abonnement")
 	public Abonnement saveAbonnement(@RequestBody Abonnement abo) {
 		List<Date> listDate = abonnementRepos.findDateFinByClientId(abo.getClient().getId());
@@ -51,11 +53,13 @@ public class AbonnementRest {
 		return abonnementRepos.save(abo);
 	}
 	
+	// liste de tous les abonnements d'un client
 	@GetMapping("abonnement/client/{idClient}")
 	public List<Abonnement> getAllAbonnementByClientId(@PathVariable Long idClient){
 		return abonnementRepos.findByClientId(idClient); //aucun abo alors renvoie la meme chose que client inexistant
 	}
 	
+	// date d'expiration de l'abonnement d'un client (null si jamais eu d'abonnement ou abonnement terminé)
 	@GetMapping("abonnement/expirationClient/{idClient}")
 	public Date getExpirationAbonnementClient(@PathVariable Long idClient) {
 		List<Date> listDate = abonnementRepos.findDateFinByClientId(idClient);
@@ -73,6 +77,7 @@ public class AbonnementRest {
 		return null;
 	}
 	
+	// supprimer abonnement
 	@DeleteMapping("abonnement/delete")
 	public void deleteAbonnement(@RequestBody Abonnement abo) {
 		abonnementRepos.delete(abo);
