@@ -16,15 +16,11 @@ public class Client extends Utilisateur{
 	//private Photo photo;
 	private int points;
 	private double note;
-
-	@OneToMany
-	private List<CarteBancaire> carteBancaire;
 	
 	@OneToOne
 	private Messagerie messagerie;
 	
-	public Client(int points, double note, List<CarteBancaire> carteBancaire,
-			Messagerie messagerie, Utilisateur u) {
+	public Client(int points, double note, Messagerie messagerie, Utilisateur u) {
 		this.setId(u.getId());
 		this.setPrenom(u.getPrenom());
 		this.setNom(u.getNom());
@@ -34,7 +30,6 @@ public class Client extends Utilisateur{
 		this.setDateCreation(u.getDateCreation());
 		this.points = points;
 		this.note = note;
-		this.carteBancaire = carteBancaire;
 		this.messagerie = messagerie;
 	}
 	

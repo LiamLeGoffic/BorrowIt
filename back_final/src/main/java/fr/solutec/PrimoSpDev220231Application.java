@@ -36,7 +36,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		System.out.println("En cours");
 		
 		Utilisateur u1 = new Utilisateur(null, "liam", "le goffic", "118 218", "moi@mail.fr", "123", null);
-		Client c1 = new Client(0, 0, null, null, u1);
+		Client c1 = new Client(0, 0, null, u1);
 		clientRepos.save(c1);
 		
 		DateFormat d = new SimpleDateFormat("dd/MM/yyyy");
