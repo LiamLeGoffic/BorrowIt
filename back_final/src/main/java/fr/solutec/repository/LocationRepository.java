@@ -11,10 +11,15 @@ import fr.solutec.entities.Location;
 public interface LocationRepository extends CrudRepository<Location, Long> {
 
 	public Optional<Location> findById(Long id);
+	public List<Location> findByObjetId(Long idObjet);
 	
 	@Query("SELECT l FROM Location l WHERE l.objet.proprietaire.id = ?1")
-	public List<Location> findLocationPropiretaire(Long idClient);
+	public List<Location> findByPropiretaire(Long idClient);
+	
+	@Query("SELECT l FROM Location l WHERE l.objet.proprietaire.id = ?1 AND l.valide = false")
+	public List<Location> findInvalideByPropiretaire(Long idClient);
 	
 	@Query("SELECT l FROM Location l WHERE l.locataire.id = ?1")
-	public List<Location> findLocationLocataire(Long idClient);
+	public List<Location> findByLocataire(Long idClient);
+	
 }

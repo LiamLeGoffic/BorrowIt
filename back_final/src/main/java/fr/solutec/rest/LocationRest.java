@@ -38,13 +38,18 @@ public class LocationRest {
 	}
 	
 	@GetMapping("location/proprietaire/{idClient}")
-	public List<Location> getLocationDuClient(@PathVariable Long idClient){
-		return locationRepos.findLocationPropiretaire(idClient);
+	public List<Location> getLocationDuProprietaire(@PathVariable Long idClient){
+		return locationRepos.findByPropiretaire(idClient);
+	}
+	
+	@GetMapping("location/invalide/proprietaire/{idClient}")
+	public List<Location> getLocationInvalideDuProprietaire(@PathVariable Long idClient){
+		return locationRepos.findInvalideByPropiretaire(idClient);
 	}
 
 	@GetMapping("location/locataire/{idClient}")
 	public List<Location> getLocationDuLocataire(@PathVariable Long idClient){
-		return locationRepos.findLocationLocataire(idClient);
+		return locationRepos.findByLocataire(idClient);
 	}
 	
 	@PatchMapping("location/finReelle/{idLocation}")
@@ -53,7 +58,25 @@ public class LocationRest {
 		if (l.isPresent()) {
 			Location loc = l.get();
 			loc.setDateFinRelle(date);
-			return loc;
+			return locationRepos.save(loc);
+		}
+		return null;
+	}
+	
+	@GetMapping("location/objet/{idObjet}")
+	public List<Location> getLocationByObjet(@PathVariable Long idObjet){
+		return locationRepos.findByObjetId(idObjet);
+	}
+
+	@PatchMapping("location/validation/{idLocation}")
+	public Location validationLocation(@PathVariable Long idLocation) {
+		Optional<Location> l = locationRepos.findById(idLocation);
+		if (l.isPresent()) {
+			Location loc = l.get();
+			if (!loc.isValide()) {
+				loc.setValide(true);
+				return locationRepos.save(loc);
+			}
 		}
 		return null;
 	}
