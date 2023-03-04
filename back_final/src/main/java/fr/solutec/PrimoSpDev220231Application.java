@@ -1,7 +1,7 @@
 package fr.solutec;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -35,17 +35,19 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		System.out.println("En cours");
 		
-		Abonnement a1 = new Abonnement(null, null, null, "points");
-		Abonnement a2 = new Abonnement(null, null, null, "argent");
-		Abonnement a3 = new Abonnement(null, null, null, "points");
+		Utilisateur u1 = new Utilisateur(null, "liam", "le goffic", "118 218", "moi@mail.fr", "123", null);
+		Client c1 = new Client(0, 0, null, null, u1);
+		clientRepos.save(c1);
+		
+		DateFormat d = new SimpleDateFormat("dd/MM/yyyy");
+				
+		Abonnement a1 = new Abonnement(null, null, null, d.parse("14/12/2022"), "points", c1);
+		Abonnement a2 = new Abonnement(null, null, null, d.parse("18/12/2022"), "argent", c1);
+		Abonnement a3 = new Abonnement(null, null, null, d.parse("19/12/2022"), "points", c1);
 		
 		abonnementRepos.save(a1);
 		abonnementRepos.save(a2);
 		abonnementRepos.save(a3);
-		
-		Utilisateur u1 = new Utilisateur(null, "liam", "le goffic", "118 218", "moi@mail.fr", "123", null);
-		Client c1 = new Client(0, 0, null, new ArrayList<Abonnement>(Arrays.asList(a1, a2, a3)), null, u1);
-		clientRepos.save(c1);
 		
 		Objet o1 = new Objet(null, "Outil", 5, 25, null,c1);
 		Objet o2 = new Objet(null, "Jeu", 10, 80, null,c1);
