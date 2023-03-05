@@ -19,9 +19,10 @@ public class Objet {
 	@Id @GeneratedValue
 	private Long id;
 	private String nom;
-	//private Photo photo;
+	//private String urlPhoto;
 	private double prixJour;
 	private double caution;
+	//private double note;
 	@CreationTimestamp
 	private Date dateCreation;
 	
