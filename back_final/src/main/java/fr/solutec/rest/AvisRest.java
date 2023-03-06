@@ -1,6 +1,7 @@
 package fr.solutec.rest;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,8 +15,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.entities.Avis;
 import fr.solutec.entities.Client;
+import fr.solutec.entities.Location;
 import fr.solutec.repository.AvisRepository;
 import fr.solutec.repository.ClientRepository;
+import fr.solutec.repository.LocationRepository;
 
 @RestController @CrossOrigin("*")
 public class AvisRest {
@@ -24,6 +27,8 @@ public class AvisRest {
 	private AvisRepository avisRepos;
 	@Autowired
 	private ClientRepository clientRepos;
+	@Autowired
+	private LocationRepository locationRepos;
 	
 	// liste de tous les avis
 	@GetMapping("avis")
@@ -49,33 +54,56 @@ public class AvisRest {
 		return avisRepos.findByLocationObjetProprietaireId(idClient);
 	}
 	
-	// nouvel avis (met à jour note moyenne du proprio mais code remplaçable par un trigger)
+	// nouvel avis (+ met à jour note moyenne du proprio)
 	@PostMapping("avis")
 	public Avis saveAvis(@RequestBody Avis a) {
-		Client proprietaire = a.getLocation().getObjet().getProprietaire(); //proprio de l'objet noté
+		avisRepos.save(a);
+		updateNote(a, false);
+		return a;
+	}
+	
+	// modifier un avis laissé (+ met à jour note moyenne du proprio)
+	@PatchMapping("avis/modifier/{idAvis}")
+	public Avis modifierAvis(@PathVariable Long idAvis, @RequestBody Avis a) {
+		a.setId(idAvis);
+		if (a.getLocation() == null) {
+			a.setLocation(locationRepos.findById(avisRepos.findById(idAvis).get().getLocation().getId()).get());
+		}
+		avisRepos.save(a);
+		updateNote(a, false);
+		return a;
+	}
+	
+	// supprimer un avis (+ met à jour note moyenne du proprio)
+	@DeleteMapping("avis/delete/{idAvis}")
+	public void deleteAvis(@PathVariable Long idAvis) {
+		Avis a = avisRepos.findById(idAvis).get();
+		updateNote(a, true);
+		avisRepos.delete(a);
+		System.out.println(a.toString());
+	}
+	
+	// met à jour note moyenne du proprio
+	private void updateNote(Avis a, boolean isDelete){
+		Location l = locationRepos.findById(a.getLocation().getId()).get();
+		Client proprietaire = l.getObjet().getProprietaire(); //proprio de l'objet noté
 		List<Double> notes = avisRepos.findNotesDuProprietaire(proprietaire.getId());
-		notes.add(a.getNote());
+		if (!isDelete) {
+			notes.add(a.getNote());
+		}
 		double total = 0;
 		for (Double note : notes) {
 		    total += note;
 		}
-		double moyenne = total / notes.size();
-		proprietaire.setNote(moyenne);
+		if (isDelete) {
+			notes.remove(a.getNote());
+		}
+		if (notes.size() == 0) {
+			proprietaire.setNote(0);
+		} else {
+			proprietaire.setNote(total / notes.size());
+		}
 		clientRepos.save(proprietaire);
-		return avisRepos.save(a);
-	}
-	
-	// modifier un avis laissé
-	@PatchMapping("avis/modifier/{idAvis}")
-	public Avis modifierAvis(@PathVariable Long idAvis, @RequestBody Avis a) {
-		a.setId(idAvis);
-		return avisRepos.save(a);
-	}
-	
-	// supprimer un avis
-	@DeleteMapping("avis/delete")
-	public void deleteAvis(@RequestBody Avis a) {
-		avisRepos.delete(a);
 	}
 	
 }
