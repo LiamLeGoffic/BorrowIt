@@ -49,9 +49,9 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		abonnementRepos.save(a2);
 		abonnementRepos.save(a3);
 		
-		Objet o1 = new Objet(null, "Outil", 5, 25, null,c1);
-		Objet o2 = new Objet(null, "Jeu", 10, 80, null,c1);
-		Objet o3 = new Objet(null, "Livre", 2, 20, null,c1);
+		Objet o1 = new Objet(null, "Tournevis","https://pimdatacdn.bahco.com/media/sub637/16a10be11fad9b3f.png", "Ceci est un tournevis des plus classiques del classico de Madrid", 5, 25, null,c1);
+		Objet o2 = new Objet(null, "Elden Ring","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, null,c1);
+		Objet o3 = new Objet(null, "Berserk", "https://i.goopics.net/imjoge.jpg", "Berserk Tome 1 j'adore la bagarre", 2, 20, null,c1);
 		objetRepos.save(o1);
 		objetRepos.save(o2);
 		objetRepos.save(o3);

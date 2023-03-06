@@ -19,7 +19,8 @@ public class Objet {
 	@Id @GeneratedValue
 	private Long id;
 	private String nom;
-	//private String urlPhoto;
+	private String urlPhoto;
+	private String description;
 	private double prixJour;
 	private double caution;
 	//private double note;
