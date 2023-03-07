@@ -18,10 +18,10 @@ public class Message {
 
 	@Id @GeneratedValue
 	private Long id;
-	private String texte;
+	private String contenu;
+	
 	@Temporal(TemporalType.DATE)
 	private Date date;
-	
 
 	@OneToOne
 	private Utilisateur Envoyeur; // un admin peut aussi envoyer ou recevoir des msg
