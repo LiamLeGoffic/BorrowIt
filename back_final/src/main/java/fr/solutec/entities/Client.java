@@ -13,14 +13,14 @@ import lombok.NoArgsConstructor;
 @Entity
 public class Client extends Utilisateur{
 
-	//private Photo photo;
+	private String urlPhoto;
 	private int points;
 	private double note;
 	
 	@OneToOne
 	private Messagerie messagerie;
 	
-	public Client(int points, double note, Messagerie messagerie, Utilisateur u) {
+	public Client(String urlPhoto, int points, double note, Messagerie messagerie, Utilisateur u) {
 		this.setId(u.getId());
 		this.setPrenom(u.getPrenom());
 		this.setNom(u.getNom());
@@ -28,6 +28,7 @@ public class Client extends Utilisateur{
 		this.setMail(u.getMail());
 		this.setMotDePasse(u.getMotDePasse());
 		this.setDateCreation(u.getDateCreation());
+		this.urlPhoto = urlPhoto;
 		this.points = points;
 		this.note = note;
 		this.messagerie = messagerie;

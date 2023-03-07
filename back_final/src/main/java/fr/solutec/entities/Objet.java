@@ -23,7 +23,6 @@ public class Objet {
 	private String description;
 	private double prixJour;
 	private double caution;
-	//private double note;
 	@CreationTimestamp
 	private Date dateCreation;
 	
