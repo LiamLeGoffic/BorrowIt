@@ -72,6 +72,12 @@ public class ObjetRest {
 		return objetRepos.findByProprietaireId(id);
 	}
 	
+	// Voir la liste d'objets d'un tag
+		@GetMapping("/tag/{tag}")
+		public List<Objet> getObjetByTag(@PathVariable String tag){
+			return objetRepos.findByTag(tag);
+		}
+		
 	// Modifier un objet partiellement
 	public boolean partialUpdate(long id, String key, String value){
 		    Optional<Objet> optional = objetRepos.findById(id);

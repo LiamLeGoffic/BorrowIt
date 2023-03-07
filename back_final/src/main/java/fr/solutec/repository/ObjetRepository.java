@@ -16,4 +16,6 @@ public interface ObjetRepository extends CrudRepository<Objet, Long> {
 	
 	public List<Objet> findByProprietaireId(Long id);
 
+	@Query("SELECT o FROM Objet o WHERE o.tag = ?1")
+	public List<Objet> findByTag(String tag);
 }
