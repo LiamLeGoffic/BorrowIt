@@ -2,11 +2,11 @@ package fr.solutec.entities;
 
 import java.util.Date;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
-import jakarta.persistence.Temporal;
-import jakarta.persistence.TemporalType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -22,7 +22,7 @@ public class Utilisateur {
 	private String numeroTelephone;
 	private String mail;
 	private String motDePasse;
-	@Temporal(TemporalType.DATE)
+	@CreationTimestamp
 	private Date dateCreation;
 	
 	
