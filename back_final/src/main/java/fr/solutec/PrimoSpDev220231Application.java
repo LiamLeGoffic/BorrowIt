@@ -10,10 +10,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import fr.solutec.entities.Abonnement;
 import fr.solutec.entities.Client;
+import fr.solutec.entities.Location;
 import fr.solutec.entities.Objet;
 import fr.solutec.entities.Utilisateur;
 import fr.solutec.repository.AbonnementRepository;
 import fr.solutec.repository.ClientRepository;
+import fr.solutec.repository.LocationRepository;
 import fr.solutec.repository.ObjetRepository;
 
 @SpringBootApplication
@@ -25,6 +27,8 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 	private ClientRepository clientRepos;
 	@Autowired
 	private ObjetRepository objetRepos;
+	@Autowired
+	private LocationRepository locationRepos;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(PrimoSpDev220231Application.class, args);
@@ -36,7 +40,6 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		System.out.println("En cours");
 		
 		DateFormat d = new SimpleDateFormat("dd/MM/yyyy");	
-		
 
 		Utilisateur u1 = new Utilisateur(null, "Liam", "Le Goffic", "118 218", "moi@mail.fr", "123",  d.parse("21/05/2021"));
 		String p1 = "https://imagizer.imageshack.com/img924/2994/mf5U2N.jpg";
@@ -94,5 +97,27 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		objetRepos.save(o13);
 		objetRepos.save(o14);
 	
+		Location loc1 = new Location(null, d.parse("10/03/2023"), d.parse("12/03/2023"), null, false, o1, c1);
+		Location loc2 = new Location(null, d.parse("13/03/2023"), d.parse("18/03/2023"), null, false, o3, c1);
+		Location loc3 = new Location(null, d.parse("11/03/2023"), d.parse("14/03/2023"), null, false, o1, c1);
+		Location loc4 = new Location(null, d.parse("12/03/2023"), d.parse("16/03/2023"), null, true, o4, c1);
+		Location loc5 = new Location(null, d.parse("14/03/2023"), d.parse("19/03/2023"), null, true, o3, c1);
+		Location loc6 = new Location(null, d.parse("01/03/2023"), d.parse("24/03/2023"), null, true, o1, c1);
+		Location loc7 = new Location(null, d.parse("08/03/2023"), d.parse("11/03/2023"), null, true, o6, c1);
+		Location loc8 = new Location(null, d.parse("07/03/2023"), d.parse("12/03/2023"), null, true, o7, c1);
+		Location loc9 = new Location(null, d.parse("06/03/2023"), d.parse("06/03/2023"), null, true, o5, c1);
+		Location loc10 = new Location(null, d.parse("02/03/2023"), d.parse("04/03/2023"), null, true, o3, c1);
+		
+		locationRepos.save(loc1);
+		locationRepos.save(loc2);
+		locationRepos.save(loc3);
+		locationRepos.save(loc4);
+		locationRepos.save(loc5);
+		locationRepos.save(loc6);
+		locationRepos.save(loc7);
+		locationRepos.save(loc8);
+		locationRepos.save(loc9);
+		locationRepos.save(loc10);
+		
 	}
 }
