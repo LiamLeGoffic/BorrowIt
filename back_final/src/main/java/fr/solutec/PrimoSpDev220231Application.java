@@ -37,12 +37,13 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		
 		DateFormat d = new SimpleDateFormat("dd/MM/yyyy");	
 		
-		Utilisateur u1 = new Utilisateur(null, "Liam", "Le Goffic", "118 218", "moi@mail.fr", "123",  null);
+
+		Utilisateur u1 = new Utilisateur(null, "Liam", "Le Goffic", "118 218", "moi@mail.fr", "123",  d.parse("21/05/2021"));
 		String p1 = "https://imagizer.imageshack.com/img924/2994/mf5U2N.jpg";
 		Client c1 = new Client(p1, 0, 0, null, u1);
 		clientRepos.save(c1);
-
-		Utilisateur u2 = new Utilisateur(null, "Clark", "Kent", "688 553", "super@mail.fr", "123", null);
+		
+		Utilisateur u2 = new Utilisateur(null, "Clark", "Kent", "688 553", "super@mail.fr", "123", d.parse("11/08/2020"));
 		String p2 = "https://imagizer.imageshack.com/img924/2994/mf5U2N.jpg";
 		Client c2 = new Client(p2, 0, 0, null, u2);
 		clientRepos.save(c2);
