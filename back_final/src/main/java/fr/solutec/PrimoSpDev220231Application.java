@@ -77,6 +77,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		Objet o12 = new Objet(null, "Kingdom Hearths II","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c2);
 		Objet o13 = new Objet(null, "Mario","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c2);
 		Objet o14 = new Objet(null, "Sonic","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c2);
+		Objet o15 = new Objet(null, "Sonic","https://pimdatacdn.bahco.com/media/sub637/16a10be11fad9b3f.png", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c2);
 
 		
 		objetRepos.save(o1);
@@ -93,6 +94,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		objetRepos.save(o12);
 		objetRepos.save(o13);
 		objetRepos.save(o14);
+		objetRepos.save(o15);
 	
 	}
 }
