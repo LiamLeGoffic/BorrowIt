@@ -58,7 +58,7 @@ public class LocationRest {
 		Optional<Location> l = locationRepos.findById(idLocation);
 		if (l.isPresent()) {
 			Location loc = l.get();
-			loc.setDateFinRelle(date);
+			loc.setDateFinReelle(date);
 			return locationRepos.save(loc);
 		}
 		return null;
