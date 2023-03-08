@@ -23,7 +23,7 @@ public class Location {
 	@Temporal(TemporalType.DATE)
 	private Date dateFin;
 	@Temporal(TemporalType.DATE)
-	private Date dateFinRelle; // date a laquelle le locataire rend l'objet
+	private Date dateFinReelle; // date a laquelle le locataire rend l'objet
 	private boolean valide; // true si validé par le propriétaire de l'objet
 	
 	@OneToOne
