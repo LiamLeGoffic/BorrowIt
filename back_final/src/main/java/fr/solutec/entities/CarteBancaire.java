@@ -18,11 +18,14 @@ public class CarteBancaire {
 
 	@Id @GeneratedValue
 	private Long id;
+	private String nom;
 	private String numero;
-	@Temporal(TemporalType.DATE) // pas besoin du jour en principe (mm/yyyy)
-	private Date dateExpiration;
+	// @Temporal(TemporalType.DATE) // pas besoin du jour en principe (mm/yyyy)
+	private String dateExpiration;
 	private String code;
 	
 	@ManyToOne
 	private Client proprietaire;
+	
+	
 }
