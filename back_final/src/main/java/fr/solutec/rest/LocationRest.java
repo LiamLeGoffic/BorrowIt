@@ -34,8 +34,17 @@ public class LocationRest {
 	}
 
 	@PostMapping("location")
-	public Location saveClient(@RequestBody Location l) {
-		return locationRepos.save(l);
+	public boolean saveClient(@RequestBody Location l) {
+		if (l.getDateFin().before(l.getDateDebut())) {
+			return false;
+		}
+		for (Location loc: locationRepos.findByObjetId(l.getObjet().getId())) {
+			if (!(l.getDateFin().before(loc.getDateDebut()) || l.getDateDebut().after(loc.getDateFin()))) {
+				return false;
+			}
+		}
+		locationRepos.save(l);
+		return true;
 	}
 	
 	@GetMapping("location/proprietaire/{idClient}")
