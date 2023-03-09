@@ -45,24 +45,44 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		
 		DateFormat d = new SimpleDateFormat("dd/MM/yyyy");	
 
-		Utilisateur u1 = new Utilisateur(null, "Liam", "Le Goffic", "118 218", "moi@mail.fr", "123",  d.parse("21/05/2021"));
+		Utilisateur u1 = new Utilisateur(null, "Liam", "Le Goffic", "118 218 456", "moi@mail.fr", "123",  d.parse("21/05/2021"));
 		String p1 = "https://imagizer.imageshack.com/img924/2994/mf5U2N.jpg";
 		Client c1 = new Client(p1, 0, 0, null, u1);
 		clientRepos.save(c1);
 		
-		Utilisateur u2 = new Utilisateur(null, "Clark", "Kent", "688 553", "super@mail.fr", "123", d.parse("11/08/2020"));
+		Utilisateur u2 = new Utilisateur(null, "Clark", "Kent", "688 534 745", "super@mail.fr", "123", d.parse("11/08/2020"));
 		String p2 = "https://cdn.pixabay.com/photo/2017/07/06/18/48/superman-2478978_1280.jpg";
 		Client c2 = new Client(p2, 0, 0, null, u2);
 		clientRepos.save(c2);
 		
-		Utilisateur u3 = new Utilisateur(null, "Super", "Admin", "123 456", "admin@mail.fr", "123", d.parse("11/08/2020"));
-		Administrateur adm1 = new Administrateur(u3);
+		Utilisateur u3 = new Utilisateur(null, "Jack", "Sparrow", "678 692 562", "pirate@mail.fr", "123", d.parse("11/07/2016"));
+		String p3 = "https://cdn.vox-cdn.com/thumbor/FIAhkoPzl1H4xvod8temCqtnrLQ=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/21696224/jbareham_200804_ply1034_0033_potc_johnny.jpg";
+		Client c3 = new Client(p3, 0, 0, null, u3);
+		clientRepos.save(c3);
+		
+		Utilisateur u4 = new Utilisateur(null, "Barack", "Obama", "483 792 574", "president@mail.fr", "123", d.parse("26/01/2010"));
+		String p4 = "https://www.whitehouse.gov/wp-content/uploads/2021/01/44_barack_obama.jpg";
+		Client c4 = new Client(p4, 0, 0, null, u4);
+		clientRepos.save(c4);
+		
+		Utilisateur u5 = new Utilisateur(null, "Sacha", "du Bourg-Palette", "743 186 275", "pokemon@mail.fr", "123", d.parse("27/12/2022"));
+		String p5 = "https://img.over-blog.com/500x282/2/81/29/14/Pokemon-XY-Episode-10-Subtitle-Indonesia.jpg";
+		Client c5 = new Client(p5, 0, 0, null, u5);
+		clientRepos.save(c5);
+		
+		Utilisateur u6 = new Utilisateur(null, "Teddy", "Riner", "684 988 553", "judo@mail.fr", "123", d.parse("05/06/2017"));
+		String p6 = "https://www.teddyriner.com/wp-content/uploads/2022/09/qui-es-tu-teddy-riner.png";
+		Client c6 = new Client(p6, 0, 0, null, u6);
+		clientRepos.save(c6);
+		
+		Utilisateur u101 = new Utilisateur(null, "Super", "Admin", "123 456", "admin@mail.fr", "123", d.parse("11/08/2020"));
+		Administrateur adm1 = new Administrateur(u101);
 		adminRepos.save(adm1);
 		
 			
 		Abonnement a1 = new Abonnement(null, null, null, d.parse("14/12/2022"), "points", c1);
 		Abonnement a2 = new Abonnement(null, null, null, d.parse("18/12/2022"), "argent", c1);
-		Abonnement a3 = new Abonnement(null, null, null, d.parse("19/12/2022"), "points", c1);
+		Abonnement a3 = new Abonnement(null, d.parse("01/06/2022"), d.parse("01/06/2022"), d.parse("01/06/2023"), "points", c1);
 		
 		abonnementRepos.save(a1);
 		abonnementRepos.save(a2);
@@ -72,7 +92,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		
 		//Outils
 		Objet o1 = new Objet(null, "Tournevis","https://pimdatacdn.bahco.com/media/sub637/16a10be11fad9b3f.png", "Ceci est un tournevis des plus classiques del classico de Madrid", 5, 25, "outil", null,c1);
-		Objet o2 = new Objet(null, "Tournevis alien","https://m.media-amazon.com/images/I/61HVa9d-NiL._AC_SY879_.jpg", "Ceci est un tournevis alien digne de Krypton", 5, 25, "outil", null,c2);
+		Objet o2 = new Objet(null, "Tournevis alien","https://m.media-amazon.com/images/I/61HVa9d-NiL._AC_SY879_.jpg", "Ceci est un tournevis alien digne de Krypton", 15, 75, "outil", null,c2);
 
 		//Films
 			
@@ -86,12 +106,15 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 
 		//Jeux
 		Objet o9 = new Objet(null, "Elden Ring","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c1);
-		Objet o10 = new Objet(null, "Skyrim","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c1);
-		Objet o11 = new Objet(null, "Death Stranding","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c1);
-		Objet o12 = new Objet(null, "Kingdom Hearths II","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c2);
-		Objet o13 = new Objet(null, "Mario","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c2);
-		Objet o14 = new Objet(null, "Sonic","https://i.goopics.net/zjtwki.jpg", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c2);
-		Objet o15 = new Objet(null, "Sonic","https://pimdatacdn.bahco.com/media/sub637/16a10be11fad9b3f.png", "Elden Ring masterclass bababaaaa", 10, 80, "jeu", null,c2);
+		Objet o10 = new Objet(null, "Skyrim","https://cdn-products.eneba.com/resized-products/yakiwtuy29tu0atooopm_350x200_1x-0.jpg", "The Elder Scrolls V", 10, 80, "jeu", null,c1);
+		Objet o11 = new Objet(null, "Death Stranding","https://cdn-products.eneba.com/resized-products/mg8JU9po5uciFgpv_C3E46qOTfA2uL6TitLc_Q_3MRA_350x200_1x-0.jpeg", "Jeu d'action dans lequel la mort fait partie intégrante du gameplay", 10, 80, "jeu", null,c1);
+		Objet o12 = new Objet(null, "Kingdom Hearths II","https://gamefaqs.gamespot.com/a/box/6/0/7/55607_front.jpg", "Kingdom hearts 2 est une pure merveille malgré ses bugs", 10, 80, "jeu", null,c2);
+		Objet o13 = new Objet(null, "New Super Mario Bros DS","https://m.media-amazon.com/images/W/IMAGERENDERING_521856-T1/images/I/91OBoUDMUKL._AC_SL1500_.jpg", "It's me Mario !", 10, 50, "jeu", null,c2);
+		Objet o14 = new Objet(null, "Sonic 1 SEGA","https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Sonic_the_Hedgehog_1_Genesis_box_art.jpg/220px-Sonic_the_Hedgehog_1_Genesis_box_art.jpg", "Jeu de plateforme a toute vitesse", 15, 150, "jeu", null,c2);
+		Objet o15 = new Objet(null, "Neverwinter Nights","https://images2.medimops.eu/product/3c25c0/M0B00009MGVF-large.jpg", "Excellent RPG basé sur D&D 3", 10, 80, "jeu", null,c2);
+
+		//Autre
+		Objet o101 = new Objet(null, "Sabre pirate","https://www.boutique-epees.fr/11840-large_default/pirates-des-caraibes-l-ile-de-sabre.jpg", "En acier, très tranchant", 50, 680, "autre", d.parse("01/06/2022"),c3);
 
 		
 		objetRepos.save(o1);
@@ -109,6 +132,8 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		objetRepos.save(o13);
 		objetRepos.save(o14);
 		objetRepos.save(o15);
+		
+		objetRepos.save(o101);
 	
 		Location loc1 = new Location(null, d.parse("10/03/2023"), d.parse("12/03/2023"), null, false, o1, c1);
 		Location loc2 = new Location(null, d.parse("13/03/2023"), d.parse("18/03/2023"), null, false, o3, c1);
