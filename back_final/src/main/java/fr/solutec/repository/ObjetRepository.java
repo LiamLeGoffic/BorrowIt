@@ -18,4 +18,7 @@ public interface ObjetRepository extends CrudRepository<Objet, Long> {
 
 	@Query("SELECT o FROM Objet o WHERE o.tag = ?1")
 	public List<Objet> findByTag(String tag);
+	
+	@Query("SELECT o FROM Objet o WHERE o.nom LIKE %?1%")
+	public List<Objet> findByNameSaisie(String saisie);
 }

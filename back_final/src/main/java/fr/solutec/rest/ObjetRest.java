@@ -106,7 +106,11 @@ public class ObjetRest {
 		} else {
 			return null;
 		}
-		
+	}
+	
+	@GetMapping("/recherche/{saisie}")
+	public List<Objet> rechercheObjet(@PathVariable String saisie){
+		return objetRepos.findByNameSaisie(saisie);
 	}
 }
 
