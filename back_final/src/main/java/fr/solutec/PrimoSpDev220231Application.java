@@ -67,7 +67,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		abonnementRepos.save(a1);
 		abonnementRepos.save(a2);
 		abonnementRepos.save(a3);
-	
+		
 		
 		
 		//Outils
