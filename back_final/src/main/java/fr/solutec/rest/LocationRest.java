@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.solutec.entities.Abonnement;
 import fr.solutec.entities.Location;
 import fr.solutec.repository.LocationRepository;
 
@@ -22,7 +23,7 @@ public class LocationRest {
 
 	@Autowired
 	private LocationRepository locationRepos;
-	
+
 	@GetMapping("location")
 	public Iterable<Location> getAllLocation(){
 		return locationRepos.findAll();
@@ -46,12 +47,12 @@ public class LocationRest {
 		locationRepos.save(l);
 		return true;
 	}
-	
+
 	@GetMapping("location/proprietaire/{idClient}")
 	public List<Location> getLocationDuProprietaire(@PathVariable Long idClient){
 		return locationRepos.findByPropiretaire(idClient);
 	}
-	
+
 	@GetMapping("location/invalide/proprietaire/{idClient}")
 	public List<Location> getLocationInvalideDuProprietaire(@PathVariable Long idClient){
 		return locationRepos.findInvalideByPropiretaire(idClient);
@@ -61,7 +62,7 @@ public class LocationRest {
 	public List<Location> getLocationDuLocataire(@PathVariable Long idClient){
 		return locationRepos.findByLocataire(idClient);
 	}
-	
+
 	@PatchMapping("location/finReelle/{idLocation}")
 	public Location modifierFinReelle(@PathVariable Long idLocation, @RequestBody Date date) {
 		Optional<Location> l = locationRepos.findById(idLocation);
@@ -72,7 +73,7 @@ public class LocationRest {
 		}
 		return null;
 	}
-	
+
 	@GetMapping("location/objet/{idObjet}")
 	public List<Location> getLocationByObjet(@PathVariable Long idObjet){
 		return locationRepos.findByObjetId(idObjet);
@@ -90,9 +91,24 @@ public class LocationRest {
 		}
 		return null;
 	}
-	
+
 	@DeleteMapping("location/delete/{idLocation}")
 	public void deleteLocation(@PathVariable Long idLocation) {
 		locationRepos.delete(locationRepos.findById(idLocation).get());
 	}
+
+	// supprimer location by client id
+	@DeleteMapping("location/{clientId}")
+	public boolean deleteLocationByClientId(@PathVariable Long clientId) {
+		Optional<Location> u = locationRepos.findById(clientId);
+		if (u.isPresent()) {
+			for (Location loc : locationRepos.findByLocataire(clientId)) {
+				locationRepos.delete(loc);
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 }
