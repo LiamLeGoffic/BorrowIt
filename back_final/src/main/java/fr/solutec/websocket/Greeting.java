@@ -7,20 +7,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor @AllArgsConstructor @Data
-@Entity
 public class Greeting {
-	
-	@Id
-	private Long id;
-	private String content;
 
-
-    public Greeting(String content) {
-        this.content = content;
-    }
+    private String content;
 
     public String getContent() {
         return content;
     }
-    
 }
