@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.solutec.entities.Avis;
 import fr.solutec.entities.Objet;
 import fr.solutec.entities.Signalement;
 import fr.solutec.repository.SignalementRepository;
@@ -23,42 +24,54 @@ public class SignalementRest {
 
 	@Autowired
 	private SignalementRepository signalementRepos;
-	
+
 	// Liste de tous les objets
 	@GetMapping
 	public Iterable<Signalement> getAllSignalements(){
 		return signalementRepos.findAll();
 	}
-	
+
 	// Objet par son id
 	@GetMapping("/{id}")
 	public Optional<Signalement> getSignalementById(@PathVariable Long id){
 		return signalementRepos.findById(id);
 	}
-	
+
 	// Créer un nouvel objet
 	@PostMapping
 	public Signalement saveSignalement(@RequestBody Signalement s) {
 		return signalementRepos.save(s);
 	}
-	
+
 	// Supprimer un objet
 	@DeleteMapping
 	public void deleteSignalement(@RequestBody Signalement s) {
 		signalementRepos.delete(s);
 	}
-	
+
 	// Voir liste de signalement d'une personne
 	@GetMapping("/listeSignalementClient/{id}")
 	public List<Signalement> getSignalementByClient(@PathVariable Long id){
 		return signalementRepos.findByClientSuspectId(id);
 	}
-	
+
 	// Nombre de signalements par id
 	@GetMapping("/nbSignalements/{id}")
 	public int getNombreSignalementByClient(@PathVariable Long id){
 		return signalementRepos.findByClientSuspectId(id).size();
 	}
 
-	
+	// supprimer signalement by client id
+	@DeleteMapping("signalement/{clientId}")
+	public boolean deleteSignalementByClientId(@PathVariable Long clientId) {
+		Optional<Signalement> u = signalementRepos.findById(clientId);
+		if (u.isPresent()) {
+			for (Signalement sig : signalementRepos.findByClientSuspectId(clientId)) {
+				signalementRepos.delete(sig);
+			}
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

@@ -3,6 +3,7 @@ package fr.solutec.rest;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import fr.solutec.entities.Abonnement;
+import fr.solutec.entities.Utilisateur;
 import fr.solutec.repository.AbonnementRepository;
 
 @RestController @CrossOrigin("*")
@@ -78,9 +80,17 @@ public class AbonnementRest {
 	}
 	
 	// supprimer abonnement
-	@DeleteMapping("abonnement/delete")
-	public void deleteAbonnement(@RequestBody Abonnement abo) {
-		abonnementRepos.delete(abo);
+	@DeleteMapping("abonnement/{clientId}")
+	public boolean deleteAbonnementByClientId(@PathVariable Long clientId) {
+		Optional<Abonnement> u = abonnementRepos.findById(clientId);
+		if (u.isPresent()) {
+			for (Abonnement abo : abonnementRepos.findByClientId(clientId)) {
+				abonnementRepos.delete(abo);
+			}
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 }
