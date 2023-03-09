@@ -67,6 +67,8 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		abonnementRepos.save(a1);
 		abonnementRepos.save(a2);
 		abonnementRepos.save(a3);
+	
+		
 		
 		//Outils
 		Objet o1 = new Objet(null, "Tournevis","https://pimdatacdn.bahco.com/media/sub637/16a10be11fad9b3f.png", "Ceci est un tournevis des plus classiques del classico de Madrid", 5, 25, "outil", null,c1);
