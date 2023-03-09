@@ -1,5 +1,6 @@
 package fr.solutec.rest;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import fr.solutec.entities.Objet;
 import fr.solutec.entities.Signalement;
 import fr.solutec.repository.SignalementRepository;
 
@@ -45,4 +47,18 @@ public class SignalementRest {
 	public void deleteSignalement(@RequestBody Signalement s) {
 		signalementRepos.delete(s);
 	}
+	
+	// Voir liste de signalement d'une personne
+	@GetMapping("/listeSignalementClient/{id}")
+	public List<Signalement> getSignalementByClient(@PathVariable Long id){
+		return signalementRepos.findByClientSuspectId(id);
+	}
+	
+	// Nombre de signalements par id
+	@GetMapping("/nbSignalements/{id}")
+	public int getNombreSignalementByClient(@PathVariable Long id){
+		return signalementRepos.findByClientSuspectId(id).size();
+	}
+
+	
 }
