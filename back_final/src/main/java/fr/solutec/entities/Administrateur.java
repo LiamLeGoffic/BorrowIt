@@ -7,9 +7,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-//@NoArgsConstructor @AllArgsConstructor 
+
 @Data
 @Entity
 public class Administrateur extends Utilisateur {
 	
+	public Administrateur() {};
+	
+	public Administrateur(Utilisateur u) {
+		this.setId(u.getId());
+		this.setPrenom(u.getPrenom());
+		this.setNom(u.getNom());
+		this.setNumeroTelephone(u.getNumeroTelephone());
+		this.setMail(u.getMail());
+		this.setMotDePasse(u.getMotDePasse());
+	}
 }

@@ -8,26 +8,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor @AllArgsConstructor @Data
-@Entity
 public class HelloMessage {
 
-	@Id @GeneratedValue
-	private Long id;
-	private String sender;
-	private String receiver;
-	private String timestamp;
-	private String content;
-
-    public HelloMessage(String sender) {
-        this.sender = sender;
-    }
+    private String name;
 
     public String getName() {
-        return sender;
+        return name;
     }
 
     public void setName(String name) {
-        this.sender = name;
+        this.name = name;
     }
-    
 }

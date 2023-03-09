@@ -9,11 +9,13 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import fr.solutec.entities.Abonnement;
+import fr.solutec.entities.Administrateur;
 import fr.solutec.entities.Client;
 import fr.solutec.entities.Location;
 import fr.solutec.entities.Objet;
 import fr.solutec.entities.Utilisateur;
 import fr.solutec.repository.AbonnementRepository;
+import fr.solutec.repository.AdminRepository;
 import fr.solutec.repository.ClientRepository;
 import fr.solutec.repository.LocationRepository;
 import fr.solutec.repository.ObjetRepository;
@@ -29,6 +31,8 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 	private ObjetRepository objetRepos;
 	@Autowired
 	private LocationRepository locationRepos;
+	@Autowired
+	private AdminRepository adminRepos;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(PrimoSpDev220231Application.class, args);
@@ -50,6 +54,11 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		String p2 = "https://cdn.pixabay.com/photo/2017/07/06/18/48/superman-2478978_1280.jpg";
 		Client c2 = new Client(p2, 0, 0, null, u2);
 		clientRepos.save(c2);
+		
+		Utilisateur u3 = new Utilisateur(null, "Super", "Admin", "123 456", "admin@mail.fr", "123", d.parse("11/08/2020"));
+		Administrateur adm1 = new Administrateur(u3);
+		adminRepos.save(adm1);
+		
 			
 		Abonnement a1 = new Abonnement(null, null, null, d.parse("14/12/2022"), "points", c1);
 		Abonnement a2 = new Abonnement(null, null, null, d.parse("18/12/2022"), "argent", c1);
