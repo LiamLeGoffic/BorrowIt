@@ -114,7 +114,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		Objet o15 = new Objet(null, "Neverwinter Nights","https://images2.medimops.eu/product/3c25c0/M0B00009MGVF-large.jpg", "Excellent RPG basé sur D&D 3", 10, 80, "jeu", null,c2);
 
 		//Autre
-		Objet o101 = new Objet(null, "Sable pirate","https://www.boutique-epees.fr/11840-large_default/pirates-des-caraibes-l-ile-de-sabre.jpg", "En acier, très tranchant", 50, 680, "autre", null,c2);
+		Objet o101 = new Objet(null, "Sabre pirate","https://www.boutique-epees.fr/11840-large_default/pirates-des-caraibes-l-ile-de-sabre.jpg", "En acier, très tranchant", 50, 680, "autre", null,c3);
 
 		
 		objetRepos.save(o1);
