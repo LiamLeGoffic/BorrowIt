@@ -25,10 +25,10 @@ public class AdminRest {
 	}*/
 	
 	// trouver tous les administrateurs
-		@GetMapping("administrateur")
-		public Iterable<Administrateur> getAllAdmin(){
-			return adminRepos.findAll();
-		}
+	@GetMapping("administrateur")
+	public Iterable<Administrateur> getAllAdmin(){
+		return adminRepos.findAll();
+	}
 	
 	// trouver un administrateur par son id
 	@GetMapping("administrateur/{idAdmin}")
