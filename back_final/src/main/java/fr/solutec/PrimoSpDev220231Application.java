@@ -178,11 +178,11 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		Objet oFilm3 = new Objet(null, "Forrest Gump", "https://www.example.com/forrestgump.jpg", "Blu-Ray. Un film dramatique sur un homme simple d'esprit qui traverse l'histoire américaine", 4.99, 15.0, "Films", d.parse("18/12/2022"), c15);
 		Objet oFilm4 = new Objet(null, "Jurassic Park", "https://i.goopics.net/y43cqs.jpg", "Blu-Ray. Un film d'aventure sur un parc à thème rempli de dinosaures génétiquement recréés", 3.99, 10.0, "Films", d.parse("18/12/2022"), c1);
 		Objet oFilm5 = new Objet(null, "Inception", "https://i.goopics.net/76r9j9.jpg", "Blu-Ray. Un film de science-fiction sur un voleur qui entre dans les rêves de ses victimes pour voler des secrets", 7.99, 30.0, "Films", d.parse("18/12/2022"), c2);
-		Objet oFilm6 = new Objet(null, "Le Seigneur des anneaux (Version longue)", "https://i.goopics.net/gty9oc.jpg", "Blu-Ray. Une épopée fantastique sur un hobbit qui voyage pour détruire un anneau maléfique", 9.99, 40.0, "Films", d.parse("18/12/2022"), c3);
+		Objet oFilm6 = new Objet(null, "Le Seigneur des anneaux", "https://i.goopics.net/gty9oc.jpg", "Blu-Ray. Une épopée fantastique sur un hobbit qui voyage pour détruire un anneau maléfique", 9.99, 40.0, "Films", d.parse("18/12/2022"), c3);
 		Objet oFilm7 = new Objet(null, "Les Évadés", "https://i.goopics.net/on2ptj.jpg", "Blu-Ray. Un film dramatique sur deux prisonniers qui tentent de s'échapper d'une prison de haute sécurité", 4.99, 15.0, "Films", d.parse("18/12/2022"), c4);
 		Objet oFilm8 = new Objet(null, "Le Silence des agneaux", "https://i.goopics.net/p3jk1e.jpg", "Blu-Ray. Un thriller psychologique sur un agent du FBI qui recherche un tueur en série cannibale", 6.99, 25.0, "Films", d.parse("18/12/2022"), c5);
 		Objet oFilm9 = new Objet(null, "Titanic", "https://i.goopics.net/itr7pv.jpg", "Blu-Ray. Un film romantique sur un jeune couple qui tombe amoureux à bord du Titanic avant son naufrage", 5.99, 20.0, "Films", d.parse("18/12/2022"), c6);
-		Objet oFilm10 = new Objet(null, "Interstellar", "https://i.goopics.net/eih6k4.jpg", "Blu-Ray. Un film de science-fiction sur un groupe de scientifiques qui voyagent dans l'espace pour trouver une nouvelle planète habitable", 8.99, 35.0, "Films", d.parse("18/12/2022"), c7);
+		Objet oFilm10 = new Objet(null, "Interstellar", "https://i.goopics.net/eih6k4.jpg", "Blu-Ray. Un film de science-fiction sur un groupe de scientifiques qui voyagent dans l'espace...", 8.99, 35.0, "Films", d.parse("18/12/2022"), c7);
 		/*
 		Objet oFilm11 = new Objet(null, "Le Roi Lion", "https://i.goopics.net/215fku.jpg", "Blu-Ray", 2.99, 10.0, d.parse("24/05/2011"), c8);
 		Objet oFilm12 = new Objet(null, "Le Roi Lion", "https://i.goopics.net/215fku.jpg", "Blu-Ray. Un dessin animé intemporel pour enfants et adultes. A regarder en famille", 2.99, 10.0, d.parse("18/12/2021"), c8); */
@@ -196,11 +196,11 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		Objet oLiv5 = new Objet(null, "Berserk 25", "https://i.goopics.net/r2laf3.jpg", "Berserk Tome 1 j'adore la bagarre", 2, 20,"livre", null, c1);
 		Objet oLiv6 = new Objet(null, "Twilight", "https://i.goopics.net/k5fhfq.jpg", "Berserk Tome 1 j'adore la bagarre", 2, 20,"livre", null, c1);
 		Objet oLiv7 = new Objet(null, "Le Petit Prince", "https://i.goopics.net/uuqcbw.jpg", "Un livre de Saint-Exupéry", 2, 10, "Livres", d.parse("18/12/2022"), c3);
-		Objet oLiv8 = new Objet(null, "Harry Potter à l'école des sorciers", "https://i.goopics.net/eyqglc.jpg", "Le premier livre de la série Harry Potter", 3, 15, "Livres", d.parse("18/12/2022"), c4);
+		Objet oLiv8 = new Objet(null, "Harry Potter", "https://i.goopics.net/eyqglc.jpg", "Le premier livre de la série Harry Potter", 3, 15, "Livres", d.parse("18/12/2022"), c4);
 		Objet oLiv9 = new Objet(null, "Le Seigneur des anneaux", "https://i.goopics.net/69tx4h.jpg", "Le premier tome de la trilogie de Tolkien", 4, 20, "Livres", d.parse("18/12/2022"), c5);
 		Objet oLiv10 = new Objet(null, "Les Misérables", "https://i.goopics.net/hkzblu.jpg", "Le célèbre roman de Victor Hugo", 5, 25, "Livres", d.parse("18/12/2022"), c6);
 		Objet oLiv11 = new Objet(null, "1984", "https://i.goopics.net/1qbf1u.jpg", "Le roman dystopique de George Orwell", 2, 10, "Livres", d.parse("18/12/2022"), c12);
-		Objet oLiv12 = new Objet(null, "Le tour du monde en 80 jours (relié)", "https://i.goopics.net/5lj54o.jpg", "Le roman d'aventures de Jules Verne", 3, 15, "Livres", d.parse("18/12/2022"), c7);
+		Objet oLiv12 = new Objet(null, "Le tour du monde en 80 jours", "https://i.goopics.net/5lj54o.jpg", "Le roman d'aventures de Jules Verne", 3, 15, "Livres", d.parse("18/12/2022"), c7);
 		Objet oLiv13 = new Objet(null, "Les Trois Mousquetaires", "https://i.goopics.net/gybb5h.jpg", "Le roman d'Alexandre Dumas", 4, 20, "Livres", d.parse("18/12/2022"),c8);
 		Objet oLiv14 = new Objet(null, "Le Comte de Monte-Cristo", "https://i.goopics.net/abksul.jpg", "Le roman d'aventures d'Alexandre Dumas", 5, 25, "Livres", d.parse("18/12/2022"), c9);
 		Objet oLiv15 = new Objet(null, "Le Rouge et le Noir", "https://i.goopics.net/6lu5ii.jpg", "Le roman de Stendhal", 2, 10, "Livres", d.parse("18/12/2022"), c10);
@@ -210,7 +210,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		//Jeux
 		Objet oJeu1 = new Objet(null, "Elden Ring PS5","https://i.goopics.net/zjtwki.jpg", "Le jeu sensationnel de 2022. Pour les joueurs en quête de challenge.", 10, 80, "jeu", null,c1);
 		Objet oJeu2 = new Objet(null, "Skyrim Xbox 360","https://i.goopics.net/zjtwki.jpg", "Skyrim version Xbox360. Contacter en mp si interessé.", 10, 80, "jeu", null,c1);
-		Objet oJeu3 = new Objet(null, "Death Stranding","https://i.goopics.net/txjmbs.jpg", "Encore un classique pondu par Kojima. Une intrigue saisissante et des mécanismes de jeu subtils. Vaut définitivement le détour ! (Yoshi reste ici.)", 10, 80, "jeu", null,c1);
+		Objet oJeu3 = new Objet(null, "Death Stranding","https://i.goopics.net/txjmbs.jpg", "Encore un classique pondu par Kojima. Une intrigue saisissante et des mécanismes de jeu subtils.(Yoshi reste ici !)", 10, 80, "jeu", null,c1);
 		Objet oJeu4 = new Objet(null, "Kingdom Hearts II PS2","https://i.goopics.net/143px5.jpg", "Jeu en bon état pour une bonne dose de nostalgie", 10, 80, "jeu", null,c2);
 		Objet oJeu5 = new Objet(null, "Mario Kart 8 Deluxe","https://i.goopics.net/zbn6bx.jpg", "Cool pour une soirée jeux vidéo entre potes ou avec la famille", 10, 80, "jeu", null,c2);
 		Objet oJeu6 = new Objet(null, "Sonic GENERATIONS","https://i.goopics.net/7cccuk.jpg", "Jeu Sonic Generations XBOX360. disque bon état mais boite abimée", 10, 80, "jeu", null,c2);
@@ -245,14 +245,14 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		Objet oInfo6 = new Objet(null, "TV connectée 4K ", "https://i.goopics.net/tjdxdd.jpg", "Une télévision connectée 4K de 55 pouces de marque LG", 30, 150, "Informatique", d.parse("18/12/2022"), c1);
 		Objet oInfo7 = new Objet(null, "Souris sans fil", "https://i.goopics.net/mf1c6j.jpg", "Une souris laser sans fil et ergonomique.", 5, 25, "Informatique", d.parse("18/12/2022"), c2);		
 		Objet oInfo8 = new Objet(null, "Appareil photo Canon EOS R6", "https://i.goopics.net/1khwu9.jpg", "Appareil photo professionnel Canon EOS R6. Excellent état.", 75.00, 1500.00, "Informatique", d.parse("18/12/2022"), c3);
-		Objet oInfo9 = new Objet(null, "Lot de 8 ordinateurs portables HP", "https://i.goopics.net/lmyqns.jpg", "Lot de 8 PC portables HP. (Uniquement en LOT ! Inutile de demander à l'unité.)", 50, 500, "Info", d.parse("18/12/2022"), c4);
+		Objet oInfo9 = new Objet(null, "Lot de 8 PC portables HP", "https://i.goopics.net/lmyqns.jpg", "Lot de 8 PC portables HP. (Uniquement en LOT ! Inutile de demander à l'unité.)", 50, 500, "Info", d.parse("18/12/2022"), c4);
 		Objet oInfo10 = new Objet(null, "iPad mini 6", "https://i.goopics.net/yp4rd0.jpg", "Une tablette compacte et performante. Pratique pour utilisation en déplacement.", 20, 200, "Info", d.parse("18/12/2022"), c5);
-		Objet oInfo11 = new Objet(null, "Samsung Galaxy S10", "https://i.goopics.net/18eujp.jpg", "Le flagship 2019 du leader du marché des smartphones. Laissez-vous immerger dans un écran sans bords avec le Samsung Galaxy S10 !", 10, 100, "Info", d.parse("18/12/2022"), c6);
+		Objet oInfo11 = new Objet(null, "Samsung Galaxy S10", "https://i.goopics.net/18eujp.jpg", "Laissez-vous immerger dans un écran sans bords avec le Samsung Galaxy S10 !", 10, 100, "Info", d.parse("18/12/2022"), c6);
 		Objet oInfo12 = new Objet(null, "Imprimante professionnelle", "https://i.goopics.net/z2m19v.jpg", "Une imprimante multifonctions pour le bureau", 15, 150, "Info", d.parse("18/12/2022"), c7);
 		Objet oInfo13 = new Objet(null, "Casque audio Beats by Dre", "https://i.goopics.net/hlajup.jpg", "Un casque audio de qualité pour profiter de sa musique avec style", 5, 50, "Info", d.parse("18/12/2022"), c8);
-		Objet oInfo14 = new Objet(null, "Enceinte connectée en forme de dent (oui, en forme de dent)", "https://i.goopics.net/9v2xwi.jpg", "Une enceinte connectée en forme de dent pour vous rappeler l'horrible douleur d'une bonne vieille rage de dent, même en écoutant votre musique", 10, 100, "Info", d.parse("18/12/2022"), c9);
+		Objet oInfo14 = new Objet(null, "Enceinte connectée", "https://i.goopics.net/9v2xwi.jpg", "Une enceinte connectée en forme de dent (?)", 10, 100, "Info", d.parse("18/12/2022"), c9);
 		Objet oInfo15 = new Objet(null, "Appareil photo Bronica", "https://i.goopics.net/gbeuus.jpg", "Appareil photo argentique de la marque Bronica. Vous prendrez de magnifiques clichés !", 30, 300, "Info", d.parse("18/12/2022"), c10);
-		Objet oInfo16 = new Objet(null, "Lecteur DVD", "https://i.goopics.net/gbeuus.jpg", "Un lecteur DVD pour regarder ses anciens films préférés", 5, 50, "Info", d.parse("18/12/2022"), c11);
+		Objet oInfo16 = new Objet(null, "Lecteur DVD", "https://i.goopics.net/ks60mp.jpg", "Un lecteur DVD pour regarder ses anciens films préférés", 5, 50, "Info", d.parse("18/12/2022"), c11);
 		Objet oInfo17 = new Objet(null, "Routeur Wi-Fi", "https://i.goopics.net/50gzvy.jpg", "Un routeur Wi-Fi puissant pour une connexion internet rapide", 10, 100, "Info", d.parse("25/04/2022"), c12);
 		Objet oInfo18 = new Objet(null, "Disque dur externe 320 Go", "https://i.goopics.net/2tisbu.jpg", "disque dur externe ssd de 320Go", 5, 50, "Info", d.parse("25/04/2022"), c13);
 		Objet oInfo19 = new Objet(null, "Ecran de PC 20.7 pouces", "https://i.goopics.net/q5plvd.jpg", "Un écran d'ordinateur de 20.7 pouces. connexion HDMI", 20, 200, "Info", d.parse("25/04/2022"), c14);
@@ -264,7 +264,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		Objet oVeh3 = new Objet(null, "Voiture de collection Citroën", "https://i.goopics.net/w57iiq.jpg", "Voiture de collection des années 60", 200.00, 5000.00, "Véhicules", d.parse("25/04/2022"), c3);
 		Objet oVeh4 = new Objet(null, "Renault Clio 4", "https://i.goopics.net/gpavnj.jpg", "Une voiture compacte de marque Renault", 30, 150, "Véhicules", d.parse("25/04/2022"), c4);
 		Objet oVeh5 = new Objet(null, "Moto YAMAHA XSR 125", "https://i.goopics.net/mv7x7o.jpg", "Une moto sportive de marque Yamaha", 25, 125, "Véhicules", d.parse("25/04/2022"), c5);
-		Objet oVeh6 = new Objet(null, "Vélo Homme Décathlon 26 pouces", "https://i.goopics.net/9ya613.jpg", "Un vélo de ville pour homme de marque Decathlon", 10, 50, "Véhicules", d.parse("25/04/2022"), c6);
+		Objet oVeh6 = new Objet(null, "Vélo Homme Décathlon 26\"", "https://i.goopics.net/9ya613.jpg", "Un vélo de ville pour homme de marque Decathlon", 10, 50, "Véhicules", d.parse("25/04/2022"), c6);
 		Objet oVeh7 = new Objet(null, "Scooter Xiaomi", "https://i.goopics.net/t16dhn.jpg", "Un scooter électrique de marque Xiaomi", 15, 75, "Véhicules", d.parse("25/04/2022"), c7);
 		Objet oVeh8 = new Objet(null, "Camping-car VW", "https://i.goopics.net/mw5bsy.jpg", "Un camping-car familial de marque Volkswagen", 200, 1000, "Véhicules", d.parse("25/04/2022"), c8);
 		Objet oVeh9 = new Objet(null, "Bass Tracker TX 190", "https://i.goopics.net/h3bq76.jpg", "Un bateau de pêche en aluminium de marque Bass Tracker", 150, 750, "Véhicules", d.parse("25/04/2022"), c9);
@@ -272,7 +272,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		Objet oVeh11 = new Objet(null, "Hélicoptère", "https://i.goopics.net/fn576l.jpg", "Un hélicoptère de tourisme de marque Robinson", 1000, 5000, "Véhicules", d.parse("25/04/2022"), c11);
 		Objet oVeh12 = new Objet(null, "Vélo électrique Xiaomi", "https://i.goopics.net/7wqetf.jpg", "Un vélo électrique pliable de marque Xiaomi", 15, 75, "Véhicules", d.parse("25/04/2022"), c12);
 		Objet oVeh13 = new Objet(null, "Quad", "https://i.goopics.net/ukoyco.jpg", "Un quad tout-terrain de marque Yamaha", 50, 250, "Véhicules", d.parse("25/04/2022"), c13);
-		Objet oVeh14 = new Objet(null, "Skateboard électrique Curve V4 7A.h", "https://i.goopics.net/eeyd8g.jpg", "Le skateboard électrique idéal pour les formateurs de jeunes développeurs. Allant jusquà 38 km/h !", 5, 25, "Véhicules", d.parse("25/04/2022"), c14);	
+		Objet oVeh14 = new Objet(null, "Skateboard électrique Curve", "https://i.goopics.net/eeyd8g.jpg", "Le skateboard électrique idéal pour les formateurs de jeunes développeurs. Allant jusquà 38 km/h !", 5, 25, "Véhicules", d.parse("25/04/2022"), c14);	
 
 		//Mode
 		Objet oMode1 = new Objet(null, "Robe de soirée", "https://i.goopics.net/ox3pck.jpg", "Robe de soirée élégante", 30.00, 500.00, "Mode", d.parse("05/03/2022"), c15);
@@ -284,7 +284,7 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 		Objet oMode7 = new Objet(null, "Baskettes Adidas", "https://i.goopics.net/jegvyw.jpg", "Une paire de chaussures de sport de marque Adidas", 20, 100, "Mode", d.parse("05/03/2022"), c6);
 		Objet oMode8 = new Objet(null, "Robe d'été", "https://i.goopics.net/zkguov.jpg", "Une robe d'été pour femme (et homme, pourquoi pas ?) de marque H&M", 25, 125, "Mode", d.parse("05/03/2022"), c7);
 		Objet oMode9 = new Objet(null, "Chemise", "https://i.goopics.net/mxwht2.jpg", "Une chemise à rayures verticales assez classique", 15, 75, "Mode", d.parse("05/03/2022"), c8);
-		Objet oMode10 = new Objet(null, "Pantalon taille basse Levi's (femme)", "https://i.goopics.net/5vbs86.jpg", "Un pantalon pour femme de marque Levi's", 20, 100, "Mode", d.parse("05/03/2022"), c9);
+		Objet oMode10 = new Objet(null, "Pantalon taille basse Levi's", "https://i.goopics.net/5vbs86.jpg", "Un pantalon pour femme de marque Levi's", 20, 100, "Mode", d.parse("05/03/2022"), c9);
 		Objet oMode11 = new Objet(null, "Bottes noires UGG", "https://i.goopics.net/nzjk29.jpg", "Tiennent chaud", 30, 150, "Mode", d.parse("05/03/2022"), c10);
 		Objet oMode12 = new Objet(null, "Sac à dos North Face 40L", "https://i.goopics.net/d605m3.jpg", "Un sac à dos à grande capacité de	 marque North Face", 10, 50, "Mode", d.parse("05/03/2022"), c11);
 		Objet oMode13 = new Objet(null, "Lot de 11 cravates", "https://i.goopics.net/uo5pcg.jpg", "Lot de 11 cravates, histoire d'être sûr d'en avoir plus d'une par jour...", 10, 50, "Mode", d.parse("05/03/2022"), c12);
