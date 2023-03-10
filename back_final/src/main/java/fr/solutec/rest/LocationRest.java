@@ -44,6 +44,8 @@ public class LocationRest {
 				return false;
 			}
 		}
+		l.setValide(false);
+		l.setPayee(false);
 		locationRepos.save(l);
 		return true;
 	}
@@ -86,6 +88,19 @@ public class LocationRest {
 			Location loc = l.get();
 			if (!loc.isValide()) {
 				loc.setValide(true);
+				return locationRepos.save(loc);
+			}
+		}
+		return null;
+	}
+	
+	@PatchMapping("location/paiement/{idLocation}")
+	public Location paiementLocation(@PathVariable Long idLocation) {
+		Optional<Location> l = locationRepos.findById(idLocation);
+		if (l.isPresent()) {
+			Location loc = l.get();
+			if (!loc.isPayee()) {
+				loc.setPayee(true);
 				return locationRepos.save(loc);
 			}
 		}

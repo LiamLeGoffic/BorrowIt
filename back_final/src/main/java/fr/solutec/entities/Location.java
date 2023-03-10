@@ -25,6 +25,7 @@ public class Location {
 	@Temporal(TemporalType.DATE)
 	private Date dateFinReelle; // date a laquelle le locataire rend l'objet
 	private boolean valide; // true si validé par le propriétaire de l'objet
+	private boolean payee; // true si location déjà payée
 	
 	@OneToOne
 	private Objet objet;

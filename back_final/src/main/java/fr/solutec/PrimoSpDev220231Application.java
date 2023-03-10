@@ -500,16 +500,16 @@ public class PrimoSpDev220231Application implements CommandLineRunner {
 
 		objetRepos.save(oAutre1);
 
-		Location loc1 = new Location(null, d.parse("10/03/2023"), d.parse("12/03/2023"), null, false, o1, c1);
-		Location loc2 = new Location(null, d.parse("13/03/2023"), d.parse("18/03/2023"), null, false, o3, c1);
-		Location loc3 = new Location(null, d.parse("11/03/2023"), d.parse("14/03/2023"), null, false, o1, c1);
-		Location loc4 = new Location(null, d.parse("12/03/2023"), d.parse("16/03/2023"), null, true, o4, c1);
-		Location loc5 = new Location(null, d.parse("14/03/2023"), d.parse("19/03/2023"), null, true, o3, c1);
-		Location loc6 = new Location(null, d.parse("01/03/2023"), d.parse("24/03/2023"), null, true, o1, c1);
-		Location loc7 = new Location(null, d.parse("08/03/2023"), d.parse("11/03/2023"), null, true, o6, c1);
-		Location loc8 = new Location(null, d.parse("07/03/2023"), d.parse("12/03/2023"), null, true, o7, c1);
-		Location loc9 = new Location(null, d.parse("06/03/2023"), d.parse("06/03/2023"), null, true, o5, c1);
-		Location loc10 = new Location(null, d.parse("02/03/2023"), d.parse("04/03/2023"), null, true, o3, c1);
+		Location loc1 = new Location(null, d.parse("10/03/2023"), d.parse("12/03/2023"), null, false, false, o1, c1);
+		Location loc2 = new Location(null, d.parse("13/03/2023"), d.parse("18/03/2023"), null, false, false, o3, c1);
+		Location loc3 = new Location(null, d.parse("11/03/2023"), d.parse("14/03/2023"), null, false, false, o1, c1);
+		Location loc4 = new Location(null, d.parse("12/03/2023"), d.parse("16/03/2023"), null, true, false, o4, c1);
+		Location loc5 = new Location(null, d.parse("14/03/2023"), d.parse("19/03/2023"), null, true, false, o3, c1);
+		Location loc6 = new Location(null, d.parse("01/03/2023"), d.parse("24/03/2023"), null, true, true, o1, c1);
+		Location loc7 = new Location(null, d.parse("08/03/2023"), d.parse("11/03/2023"), null, true, true, o6, c1);
+		Location loc8 = new Location(null, d.parse("07/03/2023"), d.parse("12/03/2023"), null, true, true, o7, c1);
+		Location loc9 = new Location(null, d.parse("06/03/2023"), d.parse("06/03/2023"), null, true, true, o5, c1);
+		Location loc10 = new Location(null, d.parse("02/03/2023"), d.parse("04/03/2023"), null, true, true, o3, c1);
 
 		locationRepos.save(loc1);
 		locationRepos.save(loc2);
