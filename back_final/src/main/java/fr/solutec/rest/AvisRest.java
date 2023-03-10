@@ -42,6 +42,12 @@ public class AvisRest {
 	public List<Avis> getAvisSurObjet(@PathVariable Long idObjet){
 		return avisRepos.findByLocationObjetId(idObjet);
 	}
+	
+	// liste des avis sur un objet
+	@GetMapping("avis/location/{idLocation}")
+	public Optional<Avis> getAvisSurLocation(@PathVariable Long idLocation){
+		return avisRepos.findByLocationId(idLocation);
+	}
 
 	// liste de tous les avis postés par un client
 	@GetMapping("avis/locataire/{idClient}")

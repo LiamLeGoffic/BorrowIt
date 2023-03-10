@@ -1,6 +1,7 @@
 package fr.solutec.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -25,4 +26,8 @@ public interface AvisRepository extends CrudRepository<Avis, Long> {
 	// liste de toutes les notes d'un client
 	@Query("SELECT a.note FROM Avis a WHERE a.location.objet.proprietaire.id = ?1")
 	public List<Double> findNotesDuProprietaire(Long idClient);
+	
+	// avis sur une location
+	@Query("SELECT a FROM Avis a WHERE a.location.id = ?1")
+	public Optional<Avis> findByLocationId(Long idLocation);
 }
